@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | EduPath</title>
+  <link rel="stylesheet" href="dashboard-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <h1 class="logo">EduPath</h1>
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Dashboard</a>
+        <a href="#" class="nav-link">Learning Paths</a>
+        <a href="#" class="nav-link">Resources</a>
+        <a href="#" class="nav-link">Settings</a>
+        <a href="index.html" class="btn-logout">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="dashboard-container">
+    <div class="container">
+      <!-- Welcome Section -->
+      <div class="welcome-section">
+        <h2>Welcome, <span class="user-name">User</span>!</h2>
+        <p>Find your personalized learning resources below.</p>
+      </div>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        <!-- Profile Form Section -->
+        <div class="dashboard-card profile-completion">
+          <div class="card-header">
+            <h3>Complete Your Profile</h3>
+            <p>Help us recommend the best resources for you</p>
+          </div>
+          
+          <div class="profile-form-container">
+            <form id="profile-form">
+              <!-- Education Background Section -->
+              <div class="form-section active" data-section="1">
+                <h4>1. Education Background</h4>
+                <div class="form-group">
+                  <label for="education-level">Highest Education Level</label>
+                  <select id="education-level" required>
+                    <option value="" selected disabled>Select your education level</option>
+                    <option value="high-school">High School</option>
+                    <option value="associate">Associate Degree</option>
+                    <option value="bachelor">Bachelor's Degree</option>
+                    <option value="master">Master's Degree</option>
+                    <option value="phd">PhD or Doctorate</option>
+                    <option value="self-taught">Self-taught</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="field-of-study">Field of Study</label>
+                  <input type="text" id="field-of-study" placeholder="E.g., Computer Science, Business">
+                </div>
+                
+                <div class="form-navigation">
+                  <button type="button" class="btn-next" data-next="2">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+              
+              <!-- Skills Section -->
+              <div class="form-section" data-section="2">
+                <h4>2. Current Skills</h4>
+                <div class="form-group">
+                  <label>Select Your Skills</label>
+                  <div class="skills-container">
+                    <div class="skill-checkbox">
+                      <input type="checkbox" id="skill-html">
+                      <label for="skill-html">HTML</label>
+                    </div>
+                    <div class="skill-checkbox">
+                      <input type="checkbox" id="skill-css">
+                      <label for="skill-css">CSS</label>
+                    </div>
+                    <div class="skill-checkbox">
+                      <input type="checkbox" id="skill-js">
+                      <label for="skill-js">JavaScript</label>
+                    </div>
+                    <div class="skill-checkbox">
+                      <input type="checkbox" id="skill-python">
+                      <label for="skill-python">Python</label>
+                    </div>
+                    <div class="skill-checkbox">
+                      <input type="checkbox" id="skill-java">
+                      <label for="skill-java">Java</label>
+                    </div>
+                    <div class="skill-checkbox">
+                      <input type="checkbox" id="skill-react">
+                      <label for="skill-react">React</label>
+                    </div>
+                    <div class="skill-checkbox">
+                      <input type="checkbox" id="skill-node">
+                      <label for="skill-node">Node.js</label>
+                    </div>
+                    <div class="skill-checkbox">
+                      <input type="checkbox" id="skill-sql">
+                      <label for="skill-sql">SQL</label>
+                    </div>
+                  </div>
+                  
+                  <div class="add-skill-container">
+                    <input type="text" id="new-skill" placeholder="Add your own skill">
+                    <button type="button" id="add-skill-btn">Add</button>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="skill-level">Your Skill Level</label>
+                  <select id="skill-level" required>
+                    <option value="" selected disabled>Select your overall skill level</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                  </select>
+                </div>
+                
+                <div class="form-navigation">
+                  <button type="button" class="btn-prev" data-prev="1"><i class="fas fa-arrow-left"></i> Previous</button>
+                  <button type="button" class="btn-next" data-next="3">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+              
+              <!-- Learning Goals Section -->
+              <div class="form-section" data-section="3">
+                <h4>3. Learning Goals</h4>
+                <div class="form-group">
+                  <label for="learning-goal">What do you want to learn?</label>
+                  <select id="learning-goal" required>
+                    <option value="" selected disabled>Select your primary goal</option>
+                    <option value="web-dev">Web Development</option>
+                    <option value="mobile-dev">Mobile App Development</option>
+                    <option value="data-science">Data Science</option>
+                    <option value="machine-learning">Machine Learning</option>
+                    <option value="cloud-computing">Cloud Computing</option>
+                    <option value="cybersecurity">Cybersecurity</option>
+                    <option value="game-dev">Game Development</option>
+                    <option value="blockchain">Blockchain</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="learning-purpose">Purpose of Learning</label>
+                  <select id="learning-purpose" required>
+                    <option value="" selected disabled>Why are you learning?</option>
+                    <option value="career-change">Career Change</option>
+                    <option value="skill-improvement">Skill Improvement</option>
+                    <option value="hobby">Personal Interest/Hobby</option>
+                    <option value="school">School/University</option>
+                    <option value="work">Work Requirement</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="time-commitment">Weekly Time Commitment</label>
+                  <select id="time-commitment" required>
+                    <option value="" selected disabled>How much time can you dedicate?</option>
+                    <option value="minimal">Less than 5 hours/week</option>
+                    <option value="moderate">5-10 hours/week</option>
+                    <option value="significant">10-20 hours/week</option>
+                    <option value="full-time">20+ hours/week</option>
+                  </select>
+                </div>
+                
+                <div class="form-navigation">
+                  <button type="button" class="btn-prev" data-prev="2"><i class="fas fa-arrow-left"></i> Previous</button>
+                  <button type="submit" class="btn-submit">Generate Learning Path</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <!-- Learning Path Section (Initially Hidden) -->
+        <div class="dashboard-card learning-path-section" id="learning-path-section" style="display: none;">
+          <div class="card-header">
+            <h3>Your Personalized Learning Path</h3>
+            <p>Based on your profile and learning goals</p>
+          </div>
+          
+          <div class="learning-path-content">
+            <!-- Path Steps -->
+            <div class="path-steps">
+              <div class="path-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Getting Started with HTML & CSS</h4>
+                  <p>Learn the basics of web development by mastering HTML structure and CSS styling.</p>
+                  <div class="step-resources">
+                    <a href="https://www.freecodecamp.org/learn/responsive-web-design/" class="resource-card" target="_blank">
+                      <div class="resource-icon"><i class="fas fa-graduation-cap"></i></div>
+                      <div class="resource-info">
+                        <h5>Responsive Web Design</h5>
+                        <span>freeCodeCamp</span>
+                      </div>
+                    </a>
+                    <a href="https://youtu.be/G3e-cpL7ofc" class="resource-card" target="_blank">
+                      <div class="resource-icon youtube-icon"><i class="fab fa-youtube"></i></div>
+                      <div class="resource-info">
+                        <h5>HTML & CSS Full Course</h5>
+                        <span>YouTube</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="path-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4>JavaScript Fundamentals</h4>
+                  <p>Develop your JavaScript skills to add interactivity to your websites.</p>
+                  <div class="step-resources">
+                    <a href="https://javascript.info/" class="resource-card" target="_blank">
+                      <div class="resource-icon"><i class="fas fa-book"></i></div>
+                      <div class="resource-info">
+                        <h5>JavaScript.info</h5>
+                        <span>Modern JavaScript Tutorial</span>
+                      </div>
+                    </a>
+                    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" class="resource-card" target="_blank">
+                      <div class="resource-icon"><i class="fas fa-graduation-cap"></i></div>
+                      <div class="resource-info">
+                        <h5>JavaScript Algorithms</h5>
+                        <span>freeCodeCamp</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="path-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4>React Framework</h4>
+                  <p>Build modern web applications with React, a popular JavaScript library.</p>
+                  <div class="step-resources">
+                    <a href="https://react.dev/" class="resource-card" target="_blank">
+                      <div class="resource-icon"><i class="fab fa-react"></i></div>
+                      <div class="resource-info">
+                        <h5>React Documentation</h5>
+                        <span>Official React Website</span>
+                      </div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=bMknfKXIFA8" class="resource-card" target="_blank">
+                      <div class="resource-icon youtube-icon"><i class="fab fa-youtube"></i></div>
+                      <div class="resource-info">
+                        <h5>React Course for Beginners</h5>
+                        <span>YouTube</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="path-actions">
+              <button id="save-path-btn" class="btn-primary">Save Learning Path</button>
+              <button id="reset-profile-btn" class="btn-secondary">Start Over</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 EduPath. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Populate user name from localStorage
+      const userNameElements = document.querySelectorAll('.user-name');
+      const userData = JSON.parse(localStorage.getItem('edupath_user') || '{}');
+      
+      if (userData.name) {
+        userNameElements.forEach(element => {
+          element.textContent = userData.name;
+        });
+      }
+      
+      // Form section navigation
+      const nextButtons = document.querySelectorAll('.btn-next');
+      const prevButtons = document.querySelectorAll('.btn-prev');
+      
+      nextButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const currentSection = button.closest('.form-section');
+          const nextSectionNumber = button.dataset.next;
+          const nextSection = document.querySelector(`.form-section[data-section="${nextSectionNumber}"]`);
+          
+          if (currentSection && nextSection) {
+            currentSection.classList.remove('active');
+            nextSection.classList.add('active');
+          }
+        });
+      });
+      
+      prevButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const currentSection = button.closest('.form-section');
+          const prevSectionNumber = button.dataset.prev;
+          const prevSection = document.querySelector(`.form-section[data-section="${prevSectionNumber}"]`);
+          
+          if (currentSection && prevSection) {
+            currentSection.classList.remove('active');
+            prevSection.classList.add('active');
+          }
+        });
+      });
+      
+      // Add custom skill
+      const addSkillBtn = document.getElementById('add-skill-btn');
+      const newSkillInput = document.getElementById('new-skill');
+      
+      if (addSkillBtn && newSkillInput) {
+        addSkillBtn.addEventListener('click', () => {
+          addCustomSkill();
+        });
+        
+        newSkillInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            addCustomSkill();
+          }
+        });
+      }
+      
+      function addCustomSkill() {
+        const skillName = newSkillInput.value.trim();
+        if (skillName) {
+          const skillsContainer = document.querySelector('.skills-container');
+          const skillId = `skill-${skillName.toLowerCase().replace(/\s+/g, '-')}`;
+          
+          const skillElement = document.createElement('div');
+          skillElement.className = 'skill-checkbox';
+          skillElement.innerHTML = `
+            <input type="checkbox" id="${skillId}" checked>
+            <label for="${skillId}">${skillName}</label>
+          `;
+          
+          skillsContainer.appendChild(skillElement);
+          newSkillInput.value = '';
+        }
+      }
+      
+      // Profile form submission
+      const profileForm = document.getElementById('profile-form');
+      
+      if (profileForm) {
+        profileForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          // Hide profile form and show learning path
+          document.querySelector('.profile-completion').style.display = 'none';
+          document.getElementById('learning-path-section').style.display = 'block';
+          
+          // Scroll to learning path section
+          document.getElementById('learning-path-section').scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      // Reset button
+      const resetBtn = document.getElementById('reset-profile-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          // Show profile form and hide learning path
+          document.querySelector('.profile-completion').style.display = 'block';
+          document.getElementById('learning-path-section').style.display = 'none';
+          
+          // Reset form to first section
+          document.querySelectorAll('.form-section').forEach(section => {
+            section.classList.remove('active');
+          });
+          document.querySelector('.form-section[data-section="1"]').classList.add('active');
+          
+          // Scroll to form
+          document.querySelector('.profile-completion').scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      // Save path button
+      const savePathBtn = document.getElementById('save-path-btn');
+      if (savePathBtn) {
+        savePathBtn.addEventListener('click', () => {
+          // Show success message
+          alert('Learning path saved successfully!');
+          savePathBtn.textContent = 'Saved!';
+          savePathBtn.disabled = true;
+          
+          setTimeout(() => {
+            savePathBtn.textContent = 'Save Learning Path';
+            savePathBtn.disabled = false;
+          }, 2000);
+        });
+      }
+      
+      // Navigation between dashboard sections
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      // Create containers for each section
+      let learningPathsSection = document.getElementById('learning-paths-section');
+      let resourcesSection = document.getElementById('resources-section');
+      let settingsSection = document.getElementById('settings-section');
+      
+      // Create sections if they don't exist
+      if (!learningPathsSection) {
+        learningPathsSection = createLearningPathsSection();
+        document.querySelector('.dashboard-content').appendChild(learningPathsSection);
+      }
+      
+      if (!resourcesSection) {
+        resourcesSection = createResourcesSection();
+        document.querySelector('.dashboard-content').appendChild(resourcesSection);
+      }
+      
+      if (!settingsSection) {
+        settingsSection = createSettingsSection();
+        document.querySelector('.dashboard-content').appendChild(settingsSection);
+      }
+      
+      // Hide all sections except dashboard initially
+      learningPathsSection.style.display = 'none';
+      resourcesSection.style.display = 'none';
+      settingsSection.style.display = 'none';
+      
+      // Add click handlers for navigation
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Remove active class from all links
+          navLinks.forEach(l => l.classList.remove('active'));
+          // Add active class to clicked link
+          this.classList.add('active');
+          
+          // Hide all sections
+          document.querySelector('.profile-completion').style.display = 'none';
+          document.getElementById('learning-path-section').style.display = 'none';
+          learningPathsSection.style.display = 'none';
+          resourcesSection.style.display = 'none';
+          settingsSection.style.display = 'none';
+          
+          // Show selected section
+          const sectionName = this.textContent.trim();
+          
+          if (sectionName === 'Dashboard') {
+            document.querySelector('.profile-completion').style.display = 'block';
+            // Only show learning path if previously generated
+            const hasProfile = localStorage.getItem('edupath_profile');
+            if (hasProfile) {
+              document.getElementById('learning-path-section').style.display = 'block';
+            }
+          } else if (sectionName === 'Learning Paths') {
+            learningPathsSection.style.display = 'block';
+          } else if (sectionName === 'Resources') {
+            resourcesSection.style.display = 'block';
+          } else if (sectionName === 'Settings') {
+            settingsSection.style.display = 'block';
+          }
+        });
+      });
+      
+      // Create Learning Paths Section
+      function createLearningPathsSection() {
+        const section = document.createElement('div');
+        section.id = 'learning-paths-section';
+        section.className = 'dashboard-card';
+        
+        section.innerHTML = `
+          <div class="card-header">
+            <h3>My Learning Paths</h3>
+            <p>All your saved learning journeys</p>
+          </div>
+          
+          <div class="paths-container">
+            <!-- Saved Path 1 -->
+            <div class="saved-path">
+              <div class="path-header">
+                <h4>Web Development Path</h4>
+                <span class="path-progress-text">33% Complete</span>
+              </div>
+              
+              <div class="path-progress-bar">
+                <div class="progress-fill" style="width: 33%"></div>
+              </div>
+              
+              <div class="path-details">
+                <div class="path-info">
+                  <div class="path-info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Started: May 15, 2023</span>
+                  </div>
+                  <div class="path-info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Est. completion: 12 weeks</span>
+                  </div>
+                </div>
+                
+                <div class="path-buttons">
+                  <button class="btn-continue">Continue Learning</button>
+                  <button class="btn-more"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Saved Path 2 -->
+            <div class="saved-path">
+              <div class="path-header">
+                <h4>Python Data Science</h4>
+                <span class="path-progress-text">12% Complete</span>
+              </div>
+              
+              <div class="path-progress-bar">
+                <div class="progress-fill" style="width: 12%"></div>
+              </div>
+              
+              <div class="path-details">
+                <div class="path-info">
+                  <div class="path-info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Started: June 3, 2023</span>
+                  </div>
+                  <div class="path-info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Est. completion: 8 weeks</span>
+                  </div>
+                </div>
+                
+                <div class="path-buttons">
+                  <button class="btn-continue">Continue Learning</button>
+                  <button class="btn-more"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Create New Path -->
+            <div class="create-path">
+              <div class="create-path-content">
+                <div class="create-path-icon">
+                  <i class="fas fa-plus"></i>
+                </div>
+                <h4>Create New Learning Path</h4>
+                <p>Find the perfect resources for a new skill</p>
+                <button class="btn-create-path">Get Started</button>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        // Add event listeners after the section is added to the DOM
+        setTimeout(() => {
+          // Continue buttons take you to the dashboard's learning path
+          const continueButtons = section.querySelectorAll('.btn-continue');
+          continueButtons.forEach(button => {
+            button.addEventListener('click', () => {
+              // Go to dashboard tab
+              document.querySelectorAll('.nav-link')[0].click();
+              
+              // Show the learning path section
+              document.getElementById('learning-path-section').style.display = 'block';
+              document.querySelector('.profile-completion').style.display = 'none';
+              
+              // Scroll to it
+              document.getElementById('learning-path-section').scrollIntoView({
+                behavior: 'smooth'
+              });
+            });
+          });
+          
+          // Create new path button takes you to the profile form
+          const createButton = section.querySelector('.btn-create-path');
+          if (createButton) {
+            createButton.addEventListener('click', () => {
+              // Go to dashboard tab
+              document.querySelectorAll('.nav-link')[0].click();
+              
+              // Show the profile form
+              document.querySelector('.profile-completion').style.display = 'block';
+              document.getElementById('learning-path-section').style.display = 'none';
+              
+              // Reset form to first section
+              document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+              });
+              document.querySelector('.form-section[data-section="1"]').classList.add('active');
+              
+              // Scroll to it
+              document.querySelector('.profile-completion').scrollIntoView({
+                behavior: 'smooth'
+              });
+            });
+          }
+        }, 100);
+        
+        return section;
+      }
+      
+      // Create Resources Section
+      function createResourcesSection() {
+        const section = document.createElement('div');
+        section.id = 'resources-section';
+        section.className = 'dashboard-card';
+        
+        section.innerHTML = `
+          <div class="card-header">
+            <h3>Learning Resources</h3>
+            <p>Recommended education materials for you</p>
+          </div>
+          
+          <div class="resources-content">
+            <div class="resources-filters">
+              <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search resources..." class="search-input">
+              </div>
+              
+              <div class="filter-options">
+                <select class="filter-select">
+                  <option value="all">All Types</option>
+                  <option value="video">Videos</option>
+                  <option value="article">Articles</option>
+                  <option value="course">Courses</option>
+                  <option value="documentation">Documentation</option>
+                </select>
+                
+                <select class="filter-select">
+                  <option value="all">All Topics</option>
+                  <option value="html-css">HTML & CSS</option>
+                  <option value="javascript">JavaScript</option>
+                  <option value="python">Python</option>
+                  <option value="data-science">Data Science</option>
+                  <option value="machine-learning">Machine Learning</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="resources-grid">
+              <!-- Resource 1 -->
+              <div class="resource-item">
+                <div class="resource-thumb">
+                  <img src="https://picsum.photos/300/200?random=1" alt="JavaScript Tutorial">
+                  <span class="resource-type video">Video</span>
+                </div>
+                
+                <div class="resource-content">
+                  <h4>Getting Started with JavaScript: A Beginner's Guide</h4>
+                  <div class="resource-meta">
+                    <span><i class="fas fa-clock"></i> 45 min</span>
+                    <span><i class="fas fa-signal"></i> Beginner</span>
+                  </div>
+                  <p>Learn the fundamentals of JavaScript programming with this comprehensive introduction.</p>
+                  
+                  <div class="resource-footer">
+                    <div class="resource-source">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube">
+                      <span>YouTube</span>
+                    </div>
+                    
+                    <div class="resource-actions">
+                      <button class="btn-save"><i class="far fa-bookmark"></i></button>
+                      <a href="https://www.youtube.com/watch?v=W6NZfCO5SIk" target="_blank" class="btn-view">Watch <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Resource 2 -->
+              <div class="resource-item">
+                <div class="resource-thumb">
+                  <img src="https://picsum.photos/300/200?random=2" alt="CSS Techniques">
+                  <span class="resource-type article">Article</span>
+                </div>
+                
+                <div class="resource-content">
+                  <h4>Modern CSS Techniques to Master in 2023</h4>
+                  <div class="resource-meta">
+                    <span><i class="fas fa-clock"></i> 15 min read</span>
+                    <span><i class="fas fa-signal"></i> Intermediate</span>
+                  </div>
+                  <p>Discover the latest CSS features and techniques that will revolutionize your web development.</p>
+                  
+                  <div class="resource-footer">
+                    <div class="resource-source">
+                      <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_1280.png" alt="CSS Tricks">
+                      <span>CSS Tricks</span>
+                    </div>
+                    
+                    <div class="resource-actions">
+                      <button class="btn-save"><i class="far fa-bookmark"></i></button>
+                      <a href="https://css-tricks.com" target="_blank" class="btn-view">Read <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="pagination">
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <span>...</span>
+              <button class="page-btn">10</button>
+              <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        `;
+        
+        // Add event listeners for resource actions
+        setTimeout(() => {
+          // Save buttons
+          const saveButtons = section.querySelectorAll('.btn-save');
+          saveButtons.forEach(button => {
+            button.addEventListener('click', () => {
+              const icon = button.querySelector('i');
+              
+              if (icon.classList.contains('far')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                alert('Resource saved to your library');
+              } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                alert('Resource removed from your library');
+              }
+            });
+          });
+          
+          // Search functionality
+          const searchInput = section.querySelector('.search-input');
+          if (searchInput) {
+            searchInput.addEventListener('input', () => {
+              const searchTerm = searchInput.value.toLowerCase();
+              const resourceItems = section.querySelectorAll('.resource-item');
+              
+              resourceItems.forEach(item => {
+                const title = item.querySelector('h4').textContent.toLowerCase();
+                const description = item.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                  item.style.display = 'flex';
+                } else {
+                  item.style.display = 'none';
+                }
+              });
+            });
+          }
+          
+          // Pagination
+          const pageButtons = section.querySelectorAll('.page-btn');
+          pageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+              pageButtons.forEach(btn => btn.classList.remove('active'));
+              button.classList.add('active');
+            });
+          });
+        }, 100);
+        
+        return section;
+      }
+      
+      // Create Settings Section
+      function createSettingsSection() {
+        const section = document.createElement('div');
+        section.id = 'settings-section';
+        section.className = 'dashboard-card';
+        
+        const userData = JSON.parse(localStorage.getItem('edupath_user') || '{}');
+        
+        section.innerHTML = `
+          <div class="card-header">
+            <h3>Account Settings</h3>
+            <p>Manage your preferences and profile</p>
+          </div>
+          
+          <div class="settings-content">
+            <div class="settings-sidebar">
+              <ul class="settings-menu">
+                <li class="settings-menu-item active" data-tab="profile">Profile</li>
+                <li class="settings-menu-item" data-tab="preferences">Preferences</li>
+                <li class="settings-menu-item" data-tab="notifications">Notifications</li>
+                <li class="settings-menu-item" data-tab="security">Privacy & Security</li>
+              </ul>
+            </div>
+            
+            <div class="settings-main">
+              <!-- Profile Settings -->
+              <div class="settings-tab active" data-panel="profile">
+                <h4>Profile Information</h4>
+                
+                <form id="profile-settings-form" class="settings-form">
+                  <div class="form-group">
+                    <label for="profile-name">Full Name</label>
+                    <input type="text" id="profile-name" value="${userData.name || ''}" placeholder="Your name">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profile-email">Email</label>
+                    <input type="email" id="profile-email" value="${userData.email || ''}" placeholder="Your email">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profile-bio">Bio</label>
+                    <textarea id="profile-bio" placeholder="Tell us about yourself" rows="4">${userData.bio || ''}</textarea>
+                  </div>
+                  
+                  <button type="submit" class="btn-settings-save">Save Changes</button>
+                </form>
+              </div>
+              
+              <!-- Preferences Settings -->
+              <div class="settings-tab" data-panel="preferences">
+                <h4>Learning Preferences</h4>
+                
+                <form id="preferences-form" class="settings-form">
+                  <div class="form-group">
+                    <label>Preferred Learning Formats</label>
+                    <div class="checkbox-group">
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="pref-videos" checked>
+                        <label for="pref-videos">Videos</label>
+                      </div>
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="pref-articles" checked>
+                        <label for="pref-articles">Articles</label>
+                      </div>
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="pref-courses" checked>
+                        <label for="pref-courses">Courses</label>
+                      </div>
+                      <div class="checkbox-option">
+                        <input type="checkbox" id="pref-docs">
+                        <label for="pref-docs">Documentation</label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="difficulty-level">Preferred Difficulty Level</label>
+                    <select id="difficulty-level">
+                      <option value="beginner">Beginner</option>
+                      <option value="intermediate" selected>Intermediate</option>
+                      <option value="advanced">Advanced</option>
+                      <option value="all">All Levels</option>
+                    </select>
+                  </div>
+                  
+                  <button type="submit" class="btn-settings-save">Save Preferences</button>
+                </form>
+              </div>
+              
+              <!-- Notifications Settings -->
+              <div class="settings-tab" data-panel="notifications">
+                <h4>Notification Settings</h4>
+                
+                <form id="notifications-form" class="settings-form">
+                  <div class="switch-group">
+                    <div class="switch-item">
+                      <div class="switch-info">
+                        <h5>Email Notifications</h5>
+                        <p>Receive updates and recommendations via email</p>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                    
+                    <div class="switch-item">
+                      <div class="switch-info">
+                        <h5>Learning Reminders</h5>
+                        <p>Get reminders to continue your learning journey</p>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                    
+                    <div class="switch-item">
+                      <div class="switch-info">
+                        <h5>Resource Updates</h5>
+                        <p>Be notified when new resources match your interests</p>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <button type="submit" class="btn-settings-save">Save Notification Settings</button>
+                </form>
+              </div>
+              
+              <!-- Security Settings -->
+              <div class="settings-tab" data-panel="security">
+                <h4>Privacy & Security</h4>
+                
+                <form id="security-form" class="settings-form">
+                  <div class="form-group">
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password" placeholder="Enter your current password">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" placeholder="Enter new password">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="confirm-new-password">Confirm New Password</label>
+                    <input type="password" id="confirm-new-password" placeholder="Confirm new password">
+                  </div>
+                  
+                  <button type="submit" class="btn-settings-save">Update Password</button>
+                  
+                  <div class="danger-zone">
+                    <h5>Danger Zone</h5>
+                    <p>Once you delete your account, there is no going back. Please be certain.</p>
+                    <button type="button" class="btn-danger">Delete Account</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        // Add event listeners for settings functionality
+        setTimeout(() => {
+          // Settings tab navigation
+          const menuItems = section.querySelectorAll('.settings-menu-item');
+          const tabPanels = section.querySelectorAll('.settings-tab');
+          
+          menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+              const tabName = item.dataset.tab;
+              
+              // Update active menu item
+              menuItems.forEach(mi => mi.classList.remove('active'));
+              item.classList.add('active');
+              
+              // Show correct tab panel
+              tabPanels.forEach(panel => {
+                panel.classList.remove('active');
+                if (panel.dataset.panel === tabName) {
+                  panel.classList.add('active');
+                }
+              });
+            });
+          });
+          
+          // Form submissions
+          const profileForm = section.querySelector('#profile-settings-form');
+          if (profileForm) {
+            profileForm.addEventListener('submit', (e) => {
+              e.preventDefault();
+              
+              const name = document.getElementById('profile-name').value;
+              const email = document.getElementById('profile-email').value;
+              const bio = document.getElementById('profile-bio').value;
+              
+              // Update stored user data
+              const userData = JSON.parse(localStorage.getItem('edupath_user') || '{}');
+              userData.name = name;
+              userData.email = email;
+              userData.bio = bio;
+              
+              localStorage.setItem('edupath_user', JSON.stringify(userData));
+              
+              // Update UI
+              document.querySelectorAll('.user-name').forEach(el => {
+                el.textContent = name;
+              });
+              
+              alert('Profile updated successfully');
+            });
+          }
+          
+          // Preferences form
+          const preferencesForm = section.querySelector('#preferences-form');
+          if (preferencesForm) {
+            preferencesForm.addEventListener('submit', (e) => {
+              e.preventDefault();
+              alert('Learning preferences saved');
+            });
+          }
+          
+          // Notifications form
+          const notificationsForm = section.querySelector('#notifications-form');
+          if (notificationsForm) {
+            notificationsForm.addEventListener('submit', (e) => {
+              e.preventDefault();
+              alert('Notification settings updated');
+            });
+          }
+          
+          // Security form
+          const securityForm = section.querySelector('#security-form');
+          if (securityForm) {
+            securityForm.addEventListener('submit', (e) => {
+              e.preventDefault();
+              
+              const currentPassword = document.getElementById('current-password').value;
+              const newPassword = document.getElementById('new-password').value;
+              const confirmPassword = document.getElementById('confirm-new-password').value;
+              
+              if (!currentPassword || !newPassword || !confirmPassword) {
+                alert('Please fill in all password fields');
+                return;
+              }
+              
+              if (newPassword !== confirmPassword) {
+                alert('New passwords do not match');
+                return;
+              }
+              
+              // Clear form
+              document.getElementById('current-password').value = '';
+              document.getElementById('new-password').value = '';
+              document.getElementById('confirm-new-password').value = '';
+              
+              alert('Password updated successfully');
+            });
+          }
+          
+          // Delete account button
+          const deleteAccountBtn = section.querySelector('.btn-danger');
+          if (deleteAccountBtn) {
+            deleteAccountBtn.addEventListener('click', () => {
+              const confirmed = confirm('Are you sure you want to delete your account? This action cannot be undone.');
+              
+              if (confirmed) {
+                localStorage.removeItem('edupath_user');
+                localStorage.removeItem('edupath_profile');
+                window.location.href = 'index.html';
+              }
+            });
+          }
+        }, 100);
+        
+        return section;
+      }
+    });
+  </script>
+</body>
+</html>
