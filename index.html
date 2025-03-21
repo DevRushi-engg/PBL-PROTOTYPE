@@ -66,14 +66,17 @@
       <div class="nav-menu-bg"></div>
       <ul class="nav-links">
         <li><a href="#features" class="nav-link">Features</a></li>
-        
         <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-    
         <li><a href="login.html" class="nav-link nav-login">Login</a></li>
         <li><a href="signup.html" class="nav-link nav-signup">Sign Up</a></li>
       </ul>
     </div>
   </nav>
+
+  <div style="display:none">
+    <a href="login.html" id="direct-login">Login</a>
+    <a href="signup.html" id="direct-signup">Signup</a>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -271,13 +274,24 @@
     </div>
   </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-          <p>&copy; 2023 EduPath. All rights reserved.</p>
-        </div>
-      </footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 EduPath. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
+  <script>
+    document.querySelector('.nav-login').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('direct-login').click();
+    });
+    
+    document.querySelector('.nav-signup').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('direct-signup').click();
+    });
+  </script>
 </body>
 </html>

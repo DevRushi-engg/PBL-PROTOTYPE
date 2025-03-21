@@ -134,6 +134,24 @@ function initNavigation() {
       }
     }
   });
+
+  // Ensure login and signup links work correctly
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginLink = document.querySelector('.nav-login');
+    const signupLink = document.querySelector('.nav-signup');
+    
+    if (loginLink) {
+      loginLink.addEventListener('click', function(e) {
+        window.location.href = 'login.html';
+      });
+    }
+    
+    if (signupLink) {
+      signupLink.addEventListener('click', function(e) {
+        window.location.href = 'signup.html';
+      });
+    }
+  });
 }
 
 /* ===== LANDING PAGE ANIMATIONS ===== */
